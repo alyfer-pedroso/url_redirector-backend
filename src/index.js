@@ -16,7 +16,7 @@ app.use("/", routes.urls);
 
 app.use(
   cors({
-    origin: "https://url-redirector-frontend.vercel.app/",
+    origin: "*",
     methods: "GET, HEAD, PUT, PATCH, POST, DELETE, OPTIONS",
     allowedHeaders: "Content-Type, Accept, Authorization",
   })
