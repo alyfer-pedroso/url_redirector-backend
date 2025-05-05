@@ -1,11 +1,12 @@
+import dotenv from "dotenv";
+dotenv.config({ path: ".env" });
+
 import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
-import dotenv from "dotenv";
 
 import * as routes from "./routes/index.js";
 
-dotenv.config({ path: ".env" });
 const app = express();
 
 app.use(

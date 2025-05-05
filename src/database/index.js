@@ -1,12 +1,8 @@
-import { Pool } from "pg";
-import dotenv from "dotenv";
-dotenv.config({ path: ".env" });
+import { createClient } from "@supabase/supabase-js";
 
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false,
-  },
-});
+const supabase = createClient(
+  "https://rfluzljvptiotiiwmzvh.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJmbHV6bGp2cHRpb3RpaXdtenZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDY0MDY1MzgsImV4cCI6MjA2MTk4MjUzOH0.e3aiqQmkBoNWbi1X-DzZCSNL718Urnpvw9ZZrSg-OTE"
+);
 
-export default pool;
+export default supabase;
