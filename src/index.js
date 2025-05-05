@@ -43,7 +43,9 @@ app.post("/createShortUrl", async (req, res) => {
     }
 
     await pool.query("INSERT INTO urls (id, original_url) VALUES ($1, $2)", [id, original_url]);
-    res.status(200).send({ new_url: `http://localhost:${process.env.PORT}/${id}` });
+
+    const new_url = `${req.protocol}://${req.get("host")}/${id}`;
+    res.status(200).send({ new_url });
   } catch (error) {
     console.log(error);
     res.status(500).send({ message: "Something went wrong, please try again!" });
