@@ -8,12 +8,6 @@ import * as routes from "./routes/index.js";
 dotenv.config({ path: ".env" });
 const app = express();
 
-app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
-app.use(bodyParser.json({ limit: "50mb" }));
-app.use(express.json());
-
-app.use("/", routes.urls);
-
 app.use(
   cors({
     origin: "*",
@@ -21,6 +15,12 @@ app.use(
     allowedHeaders: "Content-Type, Accept, Authorization",
   })
 );
+
+app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
+app.use(bodyParser.json({ limit: "50mb" }));
+app.use(express.json());
+
+app.use("/", routes.urls);
 
 app.get("/", (_, res) => {
   res.send("Hello World!");
