@@ -13,7 +13,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "*",
+    origin: "https://url-redirector-frontend.vercel.app/",
     methods: "GET, HEAD, PUT, PATCH, POST, DELETE, OPTIONS",
     allowedHeaders: "Content-Type, Accept, Authorization",
   })
