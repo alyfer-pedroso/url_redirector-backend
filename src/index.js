@@ -29,7 +29,7 @@ app.get("/:id", async (req, res) => {
   }
 });
 
-app.post("/createShorUrl", async (req, res) => {
+app.post("/createShortUrl", async (req, res) => {
   const { original_url } = req.body;
 
   try {
