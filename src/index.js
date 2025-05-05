@@ -14,7 +14,8 @@ const app = express();
 app.use(
   cors({
     origin: "*",
-    methods: ["GET", "POST"],
+    methods: "GET, HEAD, PUT, PATCH, POST, DELETE, OPTIONS",
+    allowedHeaders: "Content-Type, Accept, Authorization",
   })
 );
 app.use(bodyParser.json({ limit: "50mb" }));
