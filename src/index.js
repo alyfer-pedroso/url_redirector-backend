@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(express.json());
 
-app.use("/urls", routes.urls);
+app.use("/", routes.urls);
 
 app.use(
   cors({
