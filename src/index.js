@@ -1,7 +1,7 @@
 import { nanoid } from "nanoid";
 
 import express from "express";
-import Cors from "cors";
+import cors from "cors";
 import bodyParser from "body-parser";
 
 import dotenv from "dotenv";
@@ -10,11 +10,6 @@ dotenv.config({ path: ".env" });
 import pool from "./database/index.js";
 
 const app = express();
-const cors = new Cors({
-  origin: "*",
-  methods: ["GET", "POST"],
-  allowedHeaders: ["Origin", "X-Requested-With", "Content-Type", "Accept", "Authorization"],
-});
 
 app.use(cors());
 app.use(bodyParser.json({ limit: "50mb" }));
